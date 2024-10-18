@@ -393,5 +393,9 @@ and that's all.
 
 ## Closing words
 
+![A qr code pointing to the github repo](images/qr-code.svg)
 
+[tinyurl.com/tlscl](https://tinyurl.com/tlscl)
 
+Perhaps it would be nice to evolve towards a world 
+where we citizens also owned part of our infrastructure.
