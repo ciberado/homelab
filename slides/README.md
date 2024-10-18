@@ -1,8 +1,14 @@
+[](#title,.coverbg)
+
 # HomeLab with Tailscale, Docker and AWS
 
 ![HomeLab](images/homelab.jpg)
 
+[](.coverbg.topic)
+
 ## Who am I?
+
+[](.coverbg.headrd)
 
 ### Javi Moreno
 
@@ -14,20 +20,30 @@ email at javier-moreno dt com
 
 :::
 
-### Capside Cloud Evangelist
+[](.coverbg)
 
-![Capside logo](images/capside-logo.png)
-
-### Principal Cloud Consultant at NTT Data
+### Principal Cloud Consultant
 
 ![NTT Data logo](images/ntt-logo.png)
 
-### UPCSchool Cloud Computing Architecture Postgraduate Course co-Director
+[](.coverbg)
 
-![UPCSchool cloud course](images/posgraduate-upc.png)
+### Postgraduate Course co-Director
 
+![UPCSchool cloud course](images/upcschool.png)
+
+::: Notes
+
+You can find more information about the course at its
+[web]() or by asking me :)
+
+:::
+
+[](.coverbg.topic)
 
 ## HomeLab
+
+[](.coverbg)
 
 ### What?
 
@@ -41,6 +57,8 @@ but that works most of the time.
 
 :::
 
+[](.coverbg)
+
 ### Why?
 
 ![Girl Playing Inside Her Room, by Tatiana Syrikova, https://www.pexels.com/photo/girl-playing-inside-her-room-3933025/](images/pexels-tatianasyrikova-3933025.jpg)
@@ -52,6 +70,8 @@ Fun. Learn. Comfort. Profit?
 ![A party of cardboards servers](images/homelab-cardboard-party.png)
 
 :::
+
+[](.coverbg)
 
 ### How?
 
@@ -65,23 +85,35 @@ with a GTX 1060 with 3GB VRAM and 16GB RAM.
 
 :::
 
+[](.coverbg)
+
 ### Where
 
 ![A picture of living room furniture](images/comedor.jpg)
 
-## Home services
+[](.coverbg.topic)
+
+## Regular services
+
+[](.coverbg.screenshot)
 
 ### Photos with [Immich](https://immich.app/)
 
 ![A screenshot of Immich](images/immich.png)
 
+[](.coverbg.screenshot)
+
 ### IoT with [Home Assistant](https://www.home-assistant.io/)
 
 ![a screenshot of Home Assistant](images/ha.png)
 
+[](.coverbg.screenshot.dark)
+
 ### Media management with [Jellyfin](https://jellyfin.org/)
 
 ![A screenshot of Jellyfin](images/jellyfin.png)
+
+[](.coverbg.screenshot)
 
 ### Quizzes with [Quizi](https://github.com/cosmoart/quiz-game)
 
@@ -100,13 +132,19 @@ During the following months, I plan to adapt
 of the original Quizi to fill this role.
 :::
 
-## Experimentation services
+[](.coverbg.topic)
+
+## Advanced services
+
+[](.coverbg.screenshot)
 
 ### Image generation with [Fooocus](https://github.com/lllyasviel/Fooocus)
 
 ![A Fooocus github repo screenshot](images/fooocus.png)
 
-### LLM with [https://ollama.com]
+[](.coverbg)
+
+### LLM with [Ollama](https://ollama.com)
 
 ![A screenshot of the Ollama website](images/ollama.png)
 
@@ -119,7 +157,11 @@ g4dn.xlarge (16GB VRAM) at spot costs $0.16 per hour, being able to fluently run
 
 :::
 
+[](.coverbg.topic)
+
 ## Challenges
+
+[](.coverbg)
 
 ### Remote access
 
@@ -130,6 +172,8 @@ g4dn.xlarge (16GB VRAM) at spot costs $0.16 per hour, being able to fluently run
 From my parent's house, from our phones.
 
 :::
+
+[](.coverbg)
 
 ### Resources
 
@@ -142,7 +186,11 @@ This NVidia A100 with 80GB costs around $10K. WTF.
 
 :::
 
-### Solution: extend it to AWS
+[](.coverbg.topic)
+
+## Solution: AWS
+
+[](.coverbg)
 
 ### Challenge: connectivity price
 
@@ -156,6 +204,8 @@ AWS's first source of income are NATgw, probably.
 
 :::
 
+[](.coverbg)
+
 ### Challenge: connectivity complexity
 
 ![A guy holding many wires](images/wires-wires.png)
@@ -167,7 +217,11 @@ Architecture. It was supposed to be fun! **I already have a job**.
 
 :::
 
+[](.coverbg.topic)
+
 ## Introducing Tailscale
+
+[](.coverbg.screenshot)
 
 ### Company history
 
@@ -182,6 +236,8 @@ Architecture. It was supposed to be fun! **I already have a job**.
 ::: Notes
 
 
+[](#mesh,.illustration)
+
 ### Product technology
 
 ![Diagram of a mesh, from Tailscape docs](images/mesh.png)
@@ -191,6 +247,7 @@ Architecture. It was supposed to be fun! **I already have a job**.
 * Wireguard-based 
 * Open source client
 * Free for 3 users / 100 devices
+* [Alternative](https://headscale.net/) control plane available
 
 ::: Notes
 
@@ -199,6 +256,8 @@ Architecture. It was supposed to be fun! **I already have a job**.
 * Wireguard is open source and battle tested.
 
 :::
+
+[](.coverbg.screenshot)
 
 ### [Account creation](https://tailscale.com/)
 
@@ -210,19 +269,23 @@ Use your preferred IdP.
 
 :::
 
+[](.illustration)
+
 ### [Tailnet configuration](https://login.tailscale.com/admin/dns)
 
 ![Three numbers in a row, by Magda Ehlers, https://www.pexels.com/photo/blue-red-and-yellow-stripe-surface-1329297/](images/one-two-three.png)
 
-* Rename the tailnet.
-* Activate MagicDNS.
-* Activate automatic HTTPs certificates.
+* Rename the tailnet
+* Activate MagicDNS
+* Activate automatic HTTPs certificates
 
 ::: Notes
 
 One user will be associated to one tailnet, but devices can be shared between tailnets.
 
 :::
+
+[](.coverbg.screenshot)
 
 ### Client install
 
@@ -236,7 +299,9 @@ Windows, Linux, MacOS, Android, Chromebooks, Google TV, iOS, Apple TV.
 
 :::
 
-### Node configuration
+[](.coverbg)
+
+### Device configuration
 
 ![Magic meme](images/magic.png)
 
@@ -245,6 +310,8 @@ Windows, Linux, MacOS, Android, Chromebooks, Google TV, iOS, Apple TV.
 Many times, there is no node configuration, apart from providing authorization.
 
 :::
+
+[](.coverbg)
 
 ### Demo!
 
@@ -265,7 +332,11 @@ sudo tailscale up --hostname=fooocus
 ```
 :::
 
+[](.coverbg.topic)
+
 ## Shared environment
+
+[](.coverbg)
 
 ### Docker under WSL
 
@@ -292,6 +363,8 @@ ws.run "wsl -d Ubuntu", vbhide
 
 :::
 
+[](.coverbg.screenshot)
+
 ### Docker compose approach
 
 ![A diagram explaining the three compose containers](images/compose-diagram.png)
@@ -314,9 +387,16 @@ services:
 
 :::
 
+[](.topic)
+
+## Features
+
+[](.coverbg.screenshot.dark)
+
 ### Mobile access
 
 ![A screenshot of the immich app](images/immich-app.png)
+
 ::: Notes
 
 Immich has a mobile App that can be used from a smartphone connected to the
@@ -324,27 +404,17 @@ tailnet.
 
 :::
 
-### WSL network bridging
-
-![HA screenshot](images/ha-webapp.png)
-
-::: Notes
-
-A Mosquitto MQTT node resides in Tequila, but Tailscale 
-on WSL seems to miss local network advertisement so the 
-IoT devices in my home network are not able to access it. Running
-Tailscale on them is out of question, so  to solve it I've set 
-a bridge between the Windows host and te WSL port with
-
-:::
+[](#quiz,.illustration)
 
 ### Public devices
 
-![Quizi screenshot](images/quiz-webapp.png)
+[https://quiz.snow-burbot.ts.net](https://quiz.snow-burbot.ts.net)
+
+
+![Quizi screenshot](images/quiz.png)
 
 ::: Notes
 
-https://quiz.snow-burbot.ts.net
 
 
 It is possible to use `tailnetd` as an HTTPs proxy, both internally and publicly.
@@ -352,9 +422,11 @@ That feature can be activate with the `serve` and `funnel` commands, or configur
 using a `json` file like in the Quizz container device.
 :::
 
+[](.coverbg.screenshot.dark)
+
 ### Exit node
 
-![Exit node options screenshot](images/exit-node.png)
+![The Netflix web](images/netflix.png)
 
 ::: Notes
 
@@ -362,7 +434,12 @@ Sets the gateway of one device to any other device configured to
 work as *exit node*. It is also possible to integrate it with
 [Mullvad VPN](https://mullvad.net).
 
+This allows devices on other apartments to use your home IP,
+fore example.
+
 :::
+
+[](.coverbg)
 
 ### Audited ssh
 
@@ -378,6 +455,8 @@ and all the commands will be recorded for audit.
 
 :::
 
+[](.coverbg)
+
 ### Subnet propagation
 
 ![A datacenter connected to two wooden houses, by Bing](images/hybrid.png)
@@ -391,11 +470,47 @@ and that's all.
 
 :::
 
-## Closing words
+[](.topic)
+
+## Gotchas
+
+[](.coverbg)
+
+### Windows & WSL
+
+![Two matrioskas dolls fighting each other](images/matrioskas.png)
+
+::: Notes
+
+You can run the Tailscale daemon in WSL and in containers at the same time.
+But you can't run it on Windows and WSL: the responses don't reach the WSL daemon.
+
+:::
+
+[](.coverbg.screenshot.dark)
+
+### WSL network propagation
+
+![HA screenshot](images/ha-webapp.png)
+
+::: Notes
+
+A Mosquitto MQTT node resides in Tequila, but Tailscale 
+on WSL seems to miss local network advertisement so the 
+IoT devices in my home network are not able to access it. Running
+Tailscale on them is out of question, so  to solve it I've set 
+a bridge between the Windows host and te WSL port with
+
+:::
+
+
+[](#closing,.illustration)
+
+### Closing words
 
 ![A qr code pointing to the github repo](images/qr-code.svg)
 
 [tinyurl.com/tlscl](https://tinyurl.com/tlscl)
 
 Perhaps it would be nice to evolve towards a world 
-where we citizens also owned part of our infrastructure.
+where we citizens also owned part of **our infrastructure**.

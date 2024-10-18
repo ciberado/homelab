@@ -1,72 +1,72 @@
-.slidedeck {
-	font-size: 40px;
-}
+.slidedeck section {
 
-.slidedeck section.regular {
-    background-image: url(../images/neon-bar-blue.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-}
+    > ul {
+        font-size: 36pt;
+    }
 
-
-.slidedeck .curtain {
+    &#title {
+        h1 {
+            width: 800px;
+            font-size: 4em;
+        }
+    }
 
     h2 {
-        top: 700px;
-        text-align: right;
+        height: 700px;
+        font-size: 6em;
+        top: 250px;
+        padding-top: 1em;
+    
+        span {
+            display: inline-block;
+            padding-top: 1em;
+        }
     }
-}
-
-
-.slidedeck {
-
-    h1 {
-        text-align: center;
+    
+    h3 {
+        font-size: 3.5em;
     }
-}
+    
+    &.headrd h3 {
+        float : right;
+        margin-top: 650px;
+        font-size: 5em;
+        width: 700px;
+    }
 
-.slidedeck section strong {
-}
+    &.screenshot .block-image {
+        top: 230px;
 
+        img {
+            object-fit : unset;
+        }
+    }
 
-.slidedeck section em {
-    padding: 0 10px;
-    font-style: normal;
-    font-weight: 200;
-	background-color: rgba(179, 207, 235, 0.2);
-}
+    &#mesh {
+        .block-image {
+            top: 240px;
+        }
+    }
 
-.slidedeck section > ul > li {
-    margin: 0 2em 1em 0;
-}
+    &#closing {
+        > .block-image {
+            margin-top: 250px;
+            width: 40%;
+            left: 100px;
+        }
+        
+        > p {
+            font-size: 48pt;
+        }
+    }
 
-.slidedeck section > p {
-	margin: 0 2em 1em 1em;
-}
+    &#quiz {
+        p {
+            font-size: 64pt;
+        }
+    }
 
-.slidedeck section > p code {
-	font-family: sans-serif;
-    font-weight: 200;
-}
-
-.slidedeck section > pre {
-	margin: 2em;
-	font-size: 32px;
-}
-
-.slidedeck .agenda > ul > li {
-	width: 28%;
-}
-
-img.fakemon {
-	position: absolute;
-	top: 650px;
-	right: 0;
-	margin: 0;
-	padding: 0;
-	width: 400px;
-}
-
-.slidedeck-book img.fakemon {
-    display: none;
+    &.dark {
+        background-color : #2a2933;
+    }
 }

@@ -1,76 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
-.slidedeck-book {
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 300;
-  font-size: 14pt;
-  max-width: 40em; }
-  .slidedeck-book section {
-    page-break-inside: avoid;
-    background-color: white;
-    color: black;
-    margin: 0 1em;
-    page-break-inside: avoid; }
-    .slidedeck-book section a,
-    .slidedeck-book section a:active,
-    .slidedeck-book section a:hover,
-    .slidedeck-book section a:visited,
-    .slidedeck-book section a:focus,
-    .slidedeck-book section link {
-      color: black; }
-    .slidedeck-book section strong {
-      font-weight: 600; }
-    .slidedeck-book section > h1, .slidedeck-book section > h2, .slidedeck-book section > h3 {
-      clear: both;
-      margin: 1em 0;
-      padding: 0;
-      background-color: none;
-      color: black;
-      position: relative;
-      z-index: 10;
-      font-family: "Noto Serif", serif; }
-    .slidedeck-book section h1 {
-      font-size: 300%; }
-    .slidedeck-book section h2 {
-      page-break-before: always; }
-    .slidedeck-book section img {
-      max-width: 100%;
-      max-height: 600px; }
-    .slidedeck-book section iframe {
-      display: none; }
-    .slidedeck-book section .iFrameNextSlide {
-      display: none; }
-    .slidedeck-book section canvas {
-      display: none; }
-    .slidedeck-book section.coverbg ul, .slidedeck-book section.framed-illustration ul, .slidedeck-book section.blocks ul {
-      list-style: none; }
-      .slidedeck-book section.coverbg ul li, .slidedeck-book section.framed-illustration ul li, .slidedeck-book section.blocks ul li {
-        margin: 0.20em; }
-    .slidedeck-book section.coverbg .block-image, .slidedeck-book section.framed-illustration .block-image, .slidedeck-book section.blocks .block-image {
-      max-width: 45%;
-      float: left;
-      margin: 0 3em 1.5em 0;
-      border: 1px solid silver; }
-      .slidedeck-book section.coverbg .block-image img, .slidedeck-book section.framed-illustration .block-image img, .slidedeck-book section.blocks .block-image img {
-        padding: 14px;
-        width: 100%; }
-    .slidedeck-book section.vanity-image .block-image {
-      display: none; }
-    .slidedeck-book section.screenshot .block-image {
-      border: 1px solid silver; }
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 .slidedeck {
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 200;
-  font-size: 48px;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-family: Open Sans, sans-serif;
+  font-weight: 400;
+  font-size: 24pt;
   /*
         General slide color, fonts, etc.
     */ }
   .slidedeck.aspect-ratio-4-3 {
-    font-size: 33.6px; }
+    font-size: 16.8pt; }
   .slidedeck section {
     background-color: white;
     color: black; }
@@ -82,20 +20,21 @@
     .slidedeck section link {
       color: black;
       text-decoration: none;
-      border-bottom: 8px solid rgba(5, 148, 243, 0.5);
-      position: relative;
-      z-index: 100; }
+      border-bottom: 8px solid rgba(255, 165, 0, 0.5); }
     .slidedeck section strong {
-      color: #0594f3;
-      font-weight: 600; }
+      color: orange; }
     .slidedeck section > h1, .slidedeck section > h2, .slidedeck section > h3 {
-      margin: 20px 30px 40px 30px;
-      padding: 4px 16px;
-      background-color: #0071bcac;
-      color: white;
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      padding: 40px;
+      margin: 40px;
+      line-height: 0.9em;
+      background-color: rgba(255, 231, 32, 0.86);
+      color: #d75050;
       position: relative;
       z-index: 10;
-      font-family: "Noto Serif", serif; }
+      text-transform: lowercase; }
     .slidedeck section ul {
       list-style: none; }
     .slidedeck section > iframe, .slidedeck section > video {
@@ -129,6 +68,17 @@
       width: 90%;
       left: 5%;
       bottom: 8px; }
+  .slidedeck .curtain > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45%;
+    background: rgba(255, 231, 32, 0.86);
+    margin: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%; }
   .slidedeck .agenda > ul {
     display: flex;
     flex-wrap: wrap;
@@ -142,37 +92,23 @@
     padding: 0.5em 1em 0.5em 0.4em;
     border-left: 2px solid silver; }
   .slidedeck .blocks > p {
-    display: none; }
+    margin: 0 100px 0 100px; }
   .slidedeck .blocks > ul {
+    margin: 28.8pt 48pt;
     padding: 0;
     display: grid;
     grid-auto-flow: column; }
     .slidedeck .blocks > ul li {
       display: block;
+      margin: 20px;
       font-size: 21px;
       text-align: center; }
       .slidedeck .blocks > ul li img {
         display: block;
         max-height: 60%;
-        margin: 0 auto 20px auto;
-        object-fit: cover;
-        max-height: 400px; }
+        margin: 0 auto 20px auto; }
       .slidedeck .blocks > ul li span {
         color: gray; }
-  .slidedeck .blocks.partial.fade-in {
-    /**
-        This should be removed once fade-in transitions are implemented,
-        as it currently requires two next actions to present the second element
-        because we are forcing the opacity of the first one.
-        */ }
-    .slidedeck .blocks.partial.fade-in > ul > li {
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 1600px;
-      margin: 0 auto; }
-      .slidedeck .blocks.partial.fade-in > ul > li:nth-of-type(1) {
-        opacity: 1; }
   .slidedeck .coverbg > div.block-image {
     position: absolute;
     top: 0;
@@ -198,41 +134,10 @@
     filter: hue-rotate(90deg); }
   .slidedeck .coverbg.huebg180 > div.block-image {
     filter: hue-rotate(180deg); }
-  .slidedeck .split-two > p {
-    display: none; }
-  .slidedeck .split-two > .block-image {
-    position: absolute; }
-  .slidedeck .split-two > .block-image:nth-of-type(1) {
-    left: -25%;
-    clip-path: polygon(0 0, calc(65% - 5px) 0, calc(85% - 5px) 100%, 0 100%); }
-  .slidedeck .split-two > .block-image:nth-of-type(2) {
-    left: 25%;
-    clip-path: polygon(calc(15% + 5px) 0, 100% 0, 100% 100%, calc(35% + 5px) 100%); }
-  .slidedeck .split-three > p {
-    display: none; }
-  .slidedeck .split-three > ul > li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; }
-    .slidedeck .split-three > ul > li > img {
-      width: 100%; }
-  .slidedeck .split-three ul > li:nth-of-type(1) {
-    clip-path: polygon(0 0, calc(40.5% - 5px) 0, calc(19.5% - 5px) 100%, 0 100%); }
-    .slidedeck .split-three ul > li:nth-of-type(1) > img {
-      transform: translateX(-33.33%); }
-  .slidedeck .split-three ul > li:nth-of-type(2) {
-    clip-path: polygon(calc(40.5% + 5px) 0, calc(78.5%  - 5px) 0, calc(58.5% - 5px) 100%, calc(19.5% + 5px) 100%); }
-  .slidedeck .split-three ul > li:nth-of-type(3) {
-    clip-path: polygon(calc(78.5% + 5px) 0, 100% 0, 100% 100%, calc(58.5% + 5px) 100%); }
-    .slidedeck .split-three ul > li:nth-of-type(3) > img {
-      transform: translateX(33.33%); }
   .slidedeck .framed-illustration {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 4em 1fr; }
+    grid-template-columns: 50% 50%; }
     .slidedeck .framed-illustration h2 {
-      height: 1.75em;
       grid-column: 1 / span 2; }
     .slidedeck .framed-illustration > div.block-image {
       overflow: hidden;
@@ -242,7 +147,7 @@
       height: 100%;
       object-fit: cover; }
     .slidedeck .framed-illustration > p, .slidedeck .framed-illustration > ul {
-      margin: 0 1.5em 0 0.5em; }
+      margin: 0 1em; }
     .slidedeck .framed-illustration br {
       margin-bottom: 1em; }
     .slidedeck .framed-illustration.right > div.block-image {
@@ -266,7 +171,7 @@
     margin-left: 50%;
     padding: 0 2em; }
   .slidedeck .illustration > ul > li {
-    margin-bottom: 0.4em; }
+    margin-bottom: 1em; }
   .slidedeck .illustration.right > div.block-image {
     left: 50%; }
   .slidedeck .illustration.right > p, .slidedeck .illustration.right > ul, .slidedeck .illustration.right > .content-group {

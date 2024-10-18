@@ -1,134 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 $base-background: white;
 $base-text-color: black;
-$base-font : "Noto Sans", sans-serif;
-$base-text-size: 48px;
-$base-text-weight: 200;
+$base-text-size: 24pt;
 
-$strong-color : #0594f3;
-$strong-text-weight: 600;
+$base-headers-background: rgba(255, 231, 32, 0.86);
+$base-headers-color:#d75050;
 
-$base-headers-background: #0071bcac;
-$base-headers-color: white;
-$base-headers-font: "Noto Serif", serif;
+$strong-color : orange;
 
-.slidedeck-book {
-    font-family: $base-font;
-    font-weight: 300;
-    font-size: min(14pt, $base-text-size);
-
-
-    max-width: 40em;
-
-    section {
-        page-break-inside: avoid;
-
-        background-color: $base-background;
-        color: $base-text-color;
-        
-        margin: 0 1em;
-        page-break-inside : avoid;
-
-        a,
-        a:active,
-        a:hover,
-        a:visited,
-        a:focus,
-        link {
-            color: $base-text-color;
-        }
-
-        strong {
-            font-weight: $strong-text-weight;
-        }
-
-        > h1, > h2, > h3 {
-            clear : both;
-            margin : 1em 0;
-            padding: 0;
-            background-color: none;
-            color: black;
-            position: relative;
-            z-index: 10;
-            font-family: $base-headers-font;
-        }
-
-        h1 {
-            font-size: 300%;
-        }
-
-        h2 {
-            page-break-before: always;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 600px;
-        }
-
-        iframe {
-            display : none;
-        }
-
-        .iFrameNextSlide {
-            display : none;
-        }
-
-        canvas {
-            display : none;
-        }
-
-        .slide-notes {
-        }
-
-        &.coverbg, &.framed-illustration, &.blocks {
-            ul {
-                list-style: none;
-
-                li {
-                    margin: 0.20em;
-                }
-            }
-
-            .block-image {
-              max-width : 45%;
-              float : left;
-              margin : 0 3em 1.5em 0;
-              border : 1px solid silver;
-
-              img {
-                padding: 14px;
-                width : 100%;
-              }
-            }
-        }
-
-        &.vanity-image {
-            .block-image {
-                display : none;
-            }
-        }
-        
-        &.screenshot {
-            .block-image {
-                border : 1px solid silver;
-            }
-        }
-
-    }
-}
 
 .slidedeck {
-    font-family: $base-font;
-    font-weight: $base-text-weight;
+    font-family: Open Sans, sans-serif;
+    font-weight: 400;
     font-size: $base-text-size;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-
 
     &.aspect-ratio-4-3 {
         font-size: $base-text-size * 0.7;
@@ -150,23 +36,25 @@ $base-headers-font: "Noto Serif", serif;
             color: $base-text-color;
             text-decoration: none;
             border-bottom: 8px solid rgba($strong-color, 0.5);
-            position: relative;
-            z-index : 100;
         }
 
         strong {
             color : $strong-color;
-            font-weight: $strong-text-weight;
         }
 
         > h1, > h2, > h3 {
-            margin: 20px 30px 40px 30px;
-            padding: 4px 16px;
+            font-family: "Lilita One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+            padding: 40px;
+            margin: 40px;
+            line-height: 0.9em;
             background-color: $base-headers-background;
             color: $base-headers-color;
             position: relative;
             z-index: 10;
-            font-family: $base-headers-font;
+            text-transform: lowercase;
         }
 
         ul {
@@ -217,6 +105,22 @@ $base-headers-font: "Noto Serif", serif;
         }
     }
 
+    .curtain {
+
+        > h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 45%;
+            background: $base-headers-background;
+            margin: 0;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }        
+    }
+
     .agenda {
         > ul {
             display: flex;
@@ -239,18 +143,18 @@ $base-headers-font: "Noto Serif", serif;
 
     .blocks {
         > p {
-            display: none;
+            margin: 0 100px 0 100px;
         }
 
         > ul {
-            //margin: $base-text-size*1.2 $base-text-size*2;
+            margin: $base-text-size*1.2 $base-text-size*2;
             padding : 0;
             display: grid;
             grid-auto-flow: column;
 
             li {
                 display: block;
-                //margin: 20px;
+                margin: 20px;
                 
                 font-size: 21px;
                 text-align: center;
@@ -259,8 +163,6 @@ $base-headers-font: "Noto Serif", serif;
                     display: block;
                     max-height: 60%;
                     margin: 0 auto 20px auto;
-                    object-fit: cover;
-                    max-height: 400px;
                 }
 
                 span {
@@ -268,26 +170,7 @@ $base-headers-font: "Noto Serif", serif;
                 }
             }
         }
-    }
 
-    .blocks.partial.fade-in {
-        /**
-        This should be removed once fade-in transitions are implemented,
-        as it currently requires two next actions to present the second element
-        because we are forcing the opacity of the first one.
-        */
-
-        > ul > li {
-            position : absolute;
-            left : 0;
-            right: 0;
-            width: 1600px;
-            margin: 0 auto;
-
-            &:nth-of-type(1) {
-                opacity : 1;
-            }
-        }
     }
 
 
@@ -336,78 +219,12 @@ $base-headers-font: "Noto Serif", serif;
         
     }
 
-    .split-two {
-        > p {
-            display : none;
-        }
-
-        > .block-image {
-            position : absolute;
-          }
-          
-        > .block-image:nth-of-type(1) {
-          left : -25%;
-          clip-path: polygon(0 0, calc(65% - 5px) 0, calc(85% - 5px) 100%, 0 100%);
-        }
-          
-        > .block-image:nth-of-type(2) {
-            left: 25%;
-            clip-path: polygon(calc(15% + 5px) 0, 100% 0, 100% 100%, calc(35% + 5px) 100%);
-        }        
-    }
-
-    .split-three {
-        > p {
-            display : none;
-        }
-
-        > ul > li {
-            position : absolute;
-            top : 0;
-            left: 0;
-            width: 100%;
-
-            > img {
-                width: 100%;
-            }    
-        }
-          
-        ul > li:nth-of-type(1) {
-            clip-path: polygon(0 0, 
-                               calc(40.5% - 5px) 0, 
-                               calc(19.5% - 5px) 100%, 
-                               0 100%);
-            > img {
-                transform: translateX(-33.33%);
-            }
-        }
-          
-        ul > li:nth-of-type(2) {
-            clip-path: polygon(calc(40.5% + 5px) 0, 
-                               calc(78.5%  - 5px) 0, 
-                               calc(58.5% - 5px) 100%, 
-                               calc(19.5% + 5px) 100%);
-        }
-          
-        ul > li:nth-of-type(3)  {
-            clip-path: polygon(calc(78.5% + 5px) 0, 
-                               100% 0, 
-                               100% 100%, 
-                               calc(58.5% + 5px) 100%);
-            > img {
-                transform: translateX(33.33%);
-            }
-        }
-    }
-
     .framed-illustration {
 
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 4em 1fr;
+        grid-template-columns: 50% 50%;
 
         h2 {
-            height: 1.75em;
             grid-column: 1 / span 2;
         }
 
@@ -423,7 +240,7 @@ $base-headers-font: "Noto Serif", serif;
         }
 
         > p, > ul {
-            margin: 0 1.5em 0 0.5em
+            margin: 0 1em;
         }
 
         br {
@@ -468,7 +285,7 @@ $base-headers-font: "Noto Serif", serif;
         }
 
         > ul > li {
-            margin-bottom: 0.4em;
+            margin-bottom: 1em;
         }
 
         &.right {
@@ -546,5 +363,3 @@ $base-headers-font: "Noto Serif", serif;
     }    
 
 }
-
-
