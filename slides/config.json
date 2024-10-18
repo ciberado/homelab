@@ -1,0 +1,11 @@
+{
+    "content": "README.md",
+    "styles": ["css/alyssum.css", "css/local.css"],
+    "resolution" : "1920x1080",
+    "liveReload" : true,
+    "preprocessors" : [
+    ],
+    "processors": [
+    ],
+    "script": ["js/index.js"]
+}

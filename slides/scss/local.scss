@@ -1,0 +1,72 @@
+.slidedeck {
+	font-size: 40px;
+}
+
+.slidedeck section.regular {
+    background-image: url(../images/neon-bar-blue.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+.slidedeck .curtain {
+
+    h2 {
+        top: 700px;
+        text-align: right;
+    }
+}
+
+
+.slidedeck {
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.slidedeck section strong {
+}
+
+
+.slidedeck section em {
+    padding: 0 10px;
+    font-style: normal;
+    font-weight: 200;
+	background-color: rgba(179, 207, 235, 0.2);
+}
+
+.slidedeck section > ul > li {
+    margin: 0 2em 1em 0;
+}
+
+.slidedeck section > p {
+	margin: 0 2em 1em 1em;
+}
+
+.slidedeck section > p code {
+	font-family: sans-serif;
+    font-weight: 200;
+}
+
+.slidedeck section > pre {
+	margin: 2em;
+	font-size: 32px;
+}
+
+.slidedeck .agenda > ul > li {
+	width: 28%;
+}
+
+img.fakemon {
+	position: absolute;
+	top: 650px;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	width: 400px;
+}
+
+.slidedeck-book img.fakemon {
+    display: none;
+}

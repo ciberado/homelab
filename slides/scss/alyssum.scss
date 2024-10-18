@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+$base-background: white;
+$base-text-color: black;
+$base-font : "Noto Sans", sans-serif;
+$base-text-size: 48px;
+$base-text-weight: 200;
+
+$strong-color : #0594f3;
+$strong-text-weight: 600;
+
+$base-headers-background: #0071bcac;
+$base-headers-color: white;
+$base-headers-font: "Noto Serif", serif;
+
+.slidedeck-book {
+    font-family: $base-font;
+    font-weight: 300;
+    font-size: min(14pt, $base-text-size);
+
+
+    max-width: 40em;
+
+    section {
+        page-break-inside: avoid;
+
+        background-color: $base-background;
+        color: $base-text-color;
+        
+        margin: 0 1em;
+        page-break-inside : avoid;
+
+        a,
+        a:active,
+        a:hover,
+        a:visited,
+        a:focus,
+        link {
+            color: $base-text-color;
+        }
+
+        strong {
+            font-weight: $strong-text-weight;
+        }
+
+        > h1, > h2, > h3 {
+            clear : both;
+            margin : 1em 0;
+            padding: 0;
+            background-color: none;
+            color: black;
+            position: relative;
+            z-index: 10;
+            font-family: $base-headers-font;
+        }
+
+        h1 {
+            font-size: 300%;
+        }
+
+        h2 {
+            page-break-before: always;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 600px;
+        }
+
+        iframe {
+            display : none;
+        }
+
+        .iFrameNextSlide {
+            display : none;
+        }
+
+        canvas {
+            display : none;
+        }
+
+        .slide-notes {
+        }
+
+        &.coverbg, &.framed-illustration, &.blocks {
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 0.20em;
+                }
+            }
+
+            .block-image {
+              max-width : 45%;
+              float : left;
+              margin : 0 3em 1.5em 0;
+              border : 1px solid silver;
+
+              img {
+                padding: 14px;
+                width : 100%;
+              }
+            }
+        }
+
+        &.vanity-image {
+            .block-image {
+                display : none;
+            }
+        }
+        
+        &.screenshot {
+            .block-image {
+                border : 1px solid silver;
+            }
+        }
+
+    }
+}
+
+.slidedeck {
+    font-family: $base-font;
+    font-weight: $base-text-weight;
+    font-size: $base-text-size;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+
+    &.aspect-ratio-4-3 {
+        font-size: $base-text-size * 0.7;
+    }
+    
+    /*
+        General slide color, fonts, etc.
+    */
+    section {
+        background-color: $base-background;
+        color: $base-text-color;
+
+        a,
+        a:active,
+        a:hover,
+        a:visited,
+        a:focus,
+        link {
+            color: $base-text-color;
+            text-decoration: none;
+            border-bottom: 8px solid rgba($strong-color, 0.5);
+            position: relative;
+            z-index : 100;
+        }
+
+        strong {
+            color : $strong-color;
+            font-weight: $strong-text-weight;
+        }
+
+        > h1, > h2, > h3 {
+            margin: 20px 30px 40px 30px;
+            padding: 4px 16px;
+            background-color: $base-headers-background;
+            color: $base-headers-color;
+            position: relative;
+            z-index: 10;
+            font-family: $base-headers-font;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        > iframe, > video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .iFrameNextSlide {
+            position: absolute;
+            top: 48%;
+            right: 1em;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: white;
+            opacity: 0.7;
+        }
+
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        > h1 {
+            font-size: 300%;
+        }
+        > h1,
+        > h2 {
+            margin: 0;
+            width: 80%;
+            text-align: center;
+        }
+        > h2 {
+            padding-bottom: 20px;
+        }
+        > p {
+            color: darken($base-text-color, 20%);
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            bottom: 8px;
+        }
+    }
+
+    .agenda {
+        > ul {
+            display: flex;
+            flex-wrap: wrap;            
+            width: 100%;
+            margin: 0 0 0 2.5%;
+            padding: 0;
+        }
+
+        > ul > li {
+            width: 30%;
+            min-height: 6em;
+            margin: 0.5em;
+            padding: 0.5em 1em 0.5em 0.4em;
+            border-left: 2px solid silver;
+        }
+
+    }
+
+
+    .blocks {
+        > p {
+            display: none;
+        }
+
+        > ul {
+            //margin: $base-text-size*1.2 $base-text-size*2;
+            padding : 0;
+            display: grid;
+            grid-auto-flow: column;
+
+            li {
+                display: block;
+                //margin: 20px;
+                
+                font-size: 21px;
+                text-align: center;
+
+                img {
+                    display: block;
+                    max-height: 60%;
+                    margin: 0 auto 20px auto;
+                    object-fit: cover;
+                    max-height: 400px;
+                }
+
+                span {
+                    color: lighten(  $base-text-color, 50% );
+                }
+            }
+        }
+    }
+
+    .blocks.partial.fade-in {
+        /**
+        This should be removed once fade-in transitions are implemented,
+        as it currently requires two next actions to present the second element
+        because we are forcing the opacity of the first one.
+        */
+
+        > ul > li {
+            position : absolute;
+            left : 0;
+            right: 0;
+            width: 1600px;
+            margin: 0 auto;
+
+            &:nth-of-type(1) {
+                opacity : 1;
+            }
+        }
+    }
+
+
+    .coverbg {
+        > div.block-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            opacity: 1;
+        }
+    
+        > div.block-image img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 1;
+        }
+    
+        &.fadedbg > div.block-image{
+            filter: contrast(10%) brightness(180%);
+        }
+    
+        &.blurredbg > div.block-image{
+            filter: blur(4px);
+        }
+    
+        &.grayedbg > div.block-image{
+            filter: \grayscale();
+        }
+        
+        &.huebg45 > div.block-image{
+            filter: hue-rotate(45deg);
+        }
+        
+        &.huebg90 > div.block-image{
+            filter: hue-rotate(90deg);
+        }
+        
+        &.huebg180 > div.block-image{
+            filter: hue-rotate(180deg);
+        }
+        
+        
+    }
+
+    .split-two {
+        > p {
+            display : none;
+        }
+
+        > .block-image {
+            position : absolute;
+          }
+          
+        > .block-image:nth-of-type(1) {
+          left : -25%;
+          clip-path: polygon(0 0, calc(65% - 5px) 0, calc(85% - 5px) 100%, 0 100%);
+        }
+          
+        > .block-image:nth-of-type(2) {
+            left: 25%;
+            clip-path: polygon(calc(15% + 5px) 0, 100% 0, 100% 100%, calc(35% + 5px) 100%);
+        }        
+    }
+
+    .split-three {
+        > p {
+            display : none;
+        }
+
+        > ul > li {
+            position : absolute;
+            top : 0;
+            left: 0;
+            width: 100%;
+
+            > img {
+                width: 100%;
+            }    
+        }
+          
+        ul > li:nth-of-type(1) {
+            clip-path: polygon(0 0, 
+                               calc(40.5% - 5px) 0, 
+                               calc(19.5% - 5px) 100%, 
+                               0 100%);
+            > img {
+                transform: translateX(-33.33%);
+            }
+        }
+          
+        ul > li:nth-of-type(2) {
+            clip-path: polygon(calc(40.5% + 5px) 0, 
+                               calc(78.5%  - 5px) 0, 
+                               calc(58.5% - 5px) 100%, 
+                               calc(19.5% + 5px) 100%);
+        }
+          
+        ul > li:nth-of-type(3)  {
+            clip-path: polygon(calc(78.5% + 5px) 0, 
+                               100% 0, 
+                               100% 100%, 
+                               calc(58.5% + 5px) 100%);
+            > img {
+                transform: translateX(33.33%);
+            }
+        }
+    }
+
+    .framed-illustration {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4em 1fr;
+
+        h2 {
+            height: 1.75em;
+            grid-column: 1 / span 2;
+        }
+
+        > div.block-image {
+            overflow: hidden;
+            margin: 0 1em 1em 1em;
+        }
+
+        > div.block-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        > p, > ul {
+            margin: 0 1.5em 0 0.5em
+        }
+
+        br {
+            margin-bottom: 1em;
+        }
+
+        &.right {
+            > div.block-image {
+                grid-row : 2;
+                grid-column: 2;
+            }
+
+            > p, > ul {
+                grid-row : 2;
+                grid-column: 1;
+            }
+        }
+
+    }
+
+    .illustration {
+
+        > div.block-image {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            overflow : hidden;
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        > div.block-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        > p, > ul, > .content-group {
+            margin-left: 50%;
+            padding: 0 2em;
+        }
+
+        > ul > li {
+            margin-bottom: 0.4em;
+        }
+
+        &.right {
+            > div.block-image {
+                left: 50%;
+            }
+
+            > p, > ul,  > .content-group {
+                margin-left: 0;
+                width: 50%;
+            }
+        }
+    }
+
+    .iconlist {
+        > ul > li {
+            display: grid;
+            grid-template-columns: 110px;
+        }
+
+        > ul > li > img {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+        }
+
+        > ul > li > strong {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        > ul > li > span {
+            grid-column: 2;
+            grid-row: 2;
+            color: lighten(  $base-text-color, 50% );
+            font-size: 80%;
+        }
+
+        
+    }
+
+    .powerlist {
+        > ul {
+            counter-reset: powerlist-list-counter;
+        }
+
+        > ul > li {
+            counter-increment: powerlist-list-counter;
+        }
+
+        > ul > li::before {
+            content: "0" counter(powerlist-list-counter);
+            font-weight: bold;
+            font-size: 3rem;
+            margin-right: 0.5rem;
+            line-height: 1;
+        }        
+    }
+
+    .glassed {
+        p, ul, pre {
+            opacity : 0.8;
+        }
+    }
+
+    .faded > div.block-image{
+        filter: contrast(10%) brightness(180%);
+    }
+
+    .blurred > div.block-image{
+        filter: blur(4px);
+    }
+
+    .grayed > div.block-image{
+        filter: \grayscale();
+    }    
+
+}
+
+
