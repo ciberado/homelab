@@ -1,6 +1,7 @@
 # Tailscale notes
 
-I'm Javi Moreno. You can reach me at "email at javier-moreno dot com". 
+I'm Javi Moreno. You can reach me writing to "email at javier-moreno dot com" or
+pinging me on [linkedin](https://www.linkedin.com/in/javier-more/). 
 I love explaining things that I find interesting to others, and I enjoy 
 learning new topics from them.
 
