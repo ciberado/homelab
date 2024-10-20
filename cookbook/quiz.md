@@ -129,6 +129,7 @@ cat << 'EOF >> ts-${SERVICE_NAME}/config/${SERVICE_NAME}.json
     "${TS_CERT_DOMAIN}:443": true
   }
 }
+EOF
 ```
 
 ## Docker compose services definition
