@@ -138,6 +138,7 @@ Write the compose file. The most interesting part is how we
 instruct the Tailscale sidecar container (`ts-${SERVICE_NAME}`)
 for using the configuration previously created:
 
+```yaml
 cat << EOF > docker-compose.yml
 services:
   ${SERVICE_NAME}-server:
