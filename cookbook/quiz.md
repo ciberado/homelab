@@ -109,7 +109,7 @@ mkdir -p ts-${SERVICE_NAME}/config
 And then, write the conf file:
 
 ```json
-cat << 'EOF >> ts-${SERVICE_NAME}/config/${SERVICE_NAME}.json
+cat << 'EOF' >> ts-${SERVICE_NAME}/config/${SERVICE_NAME}.json
 {
   "TCP": {
     "443": {
