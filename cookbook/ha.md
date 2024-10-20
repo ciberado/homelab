@@ -93,6 +93,7 @@ Write the compose file. Pay attention to the fact that the `nginx/conf`
 directory is shared between the host, the Tailscale sidecar container 
 and the Nginx container.
 
+```yaml
 cat << EOF > docker-compose.yml
 services:
   ${SERVICE_NAME}-server:
