@@ -155,10 +155,10 @@ services:
       - TS_AUTHKEY=$OAUTH_CLIENT_SECRET
       - TS_EXTRA_ARGS=--advertise-tags=tag:container
       - TS_STATE_DIR=/var/lib/tailscale
-      - TS_SERVE_CONFIG=/config/quiz.json
+      - TS_SERVE_CONFIG=/config/${SERVICE_NAME}.json
     volumes:
       - tailscale-data-${SERVICE_NAME}:/var/lib/tailscale
-      - ${PWD}/ts-quiz/config:/config
+      - ${PWD}/ts-${SERVICE_NAME}/config:/config
       - /dev/net/tun:/dev/net/tun
       - ./nginx/conf/:/certs
     cap_add:
