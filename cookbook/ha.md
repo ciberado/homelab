@@ -131,6 +131,7 @@ volumes:
   tailscale-data-${SERVICE_NAME}:
     driver: local
 EOF
+```
 
 Start the services in the background:
 
