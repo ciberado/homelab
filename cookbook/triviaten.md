@@ -66,7 +66,7 @@ cat << 'EOF' >> ts-${SERVICE_NAME}/config/${SERVICE_NAME}.json
     "${TS_CERT_DOMAIN}:443": {
       "Handlers": {
         "/": {
-          "Proxy": "http://127.0.0.1"
+          "Proxy": "http://127.0.0.1:3000"
         }
       }
     }
@@ -108,7 +108,7 @@ services:
       - TS_SERVE_CONFIG=/config/${SERVICE_NAME}.json
     volumes:
       - tailscale-data-${SERVICE_NAME}:/var/lib/tailscale
-      - ./ts-${SERVICE_NAME}/config:/config
+      - $(pwd)/ts-${SERVICE_NAME}/config:/config
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - net_admin
