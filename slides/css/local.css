@@ -1,46 +1,51 @@
 .slidedeck section > ul {
-  font-size: 36pt; }
-
+  font-size: 36pt;
+}
 .slidedeck section#title h1 {
   width: 800px;
-  font-size: 4em; }
-
+  font-size: 4em;
+}
 .slidedeck section h2 {
   height: 700px;
   font-size: 6em;
   top: 250px;
-  padding-top: 1em; }
-  .slidedeck section h2 span {
-    display: inline-block;
-    padding-top: 1em; }
-
+  padding-top: 1em;
+}
+.slidedeck section h2 span {
+  display: inline-block;
+  padding-top: 1em;
+}
 .slidedeck section h3 {
-  font-size: 3.5em; }
-
+  font-size: 3.5em;
+}
 .slidedeck section.headrd h3 {
   float: right;
   margin-top: 650px;
   font-size: 5em;
-  width: 700px; }
-
+  width: 700px;
+}
 .slidedeck section.screenshot .block-image {
-  top: 230px; }
-  .slidedeck section.screenshot .block-image img {
-    object-fit: unset; }
-
+  top: 230px;
+}
+.slidedeck section.screenshot .block-image img {
+  object-fit: unset;
+}
 .slidedeck section#mesh .block-image {
-  top: 240px; }
-
+  top: 240px;
+}
 .slidedeck section#closing > .block-image {
   margin-top: 250px;
   width: 40%;
-  left: 100px; }
-
+  left: 100px;
+}
 .slidedeck section#closing > p {
-  font-size: 48pt; }
-
+  font-size: 48pt;
+}
 .slidedeck section#quiz p {
-  font-size: 64pt; }
-
+  font-size: 64pt;
+}
 .slidedeck section.dark {
-  background-color: #2a2933; }
+  background-color: #2a2933;
+}
+
+/*# sourceMappingURL=local.css.map */

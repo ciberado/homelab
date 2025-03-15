@@ -1,11 +1,11 @@
 {
-    "name": "azure-for-devs",
+    "name": "homelab",
     "version": "0.0.1",
     "description": "",
     "main": "",
     "scripts": {
-        "build": "node-sass scss/ -o css/",
-        "watch-sass": "node-sass -w scss/ -o css/",
+        "build": "sass scss:css",
+        "watch-sass": "sass --watch scss:css",
         "server": "http-server --cors --port 8081",
         "dev": "concurrently --kill-others \"npm run watch-sass\" \"npm run server\""
     },
@@ -13,7 +13,9 @@
     "license": "ISC",
     "devDependencies": {
         "concurrently": "^6.2.1",
-        "http-server": "^13.0.2",
-        "node-sass": "^7.0.1"
+        "http-server": "^13.0.2"
+    },
+    "dependencies": {
+        "sass": "^1.85.1"
     }
 }
