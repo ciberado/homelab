@@ -230,6 +230,29 @@ ws.run "wsl -d Ubuntu", vbhide
 
 :::
 
+[](.coverbg)
+
+### Docker under WSL under Windows
+
+![Kawaii Neo](images/kawai-neo.jpg)
+
+
+::: Notes
+
+* This is a references of a film from the 60's.
+* Is this ideal? No. BUT...
+
+:::
+
+[](.coverbg)
+
+![A screenshot of Vampire Survivors](images/vampire.png)
+
+::: Notes
+
+* I can play.
+
+:::
 
 ## Regular services
 
@@ -287,40 +310,15 @@ docker run \
 :::
 
 
-[](.coverbg.screenshot)
-
-### Docker compose
-
-![A diagram explaining the three compose containers](images/compose-diagram.png)
-
-::: Notes
-
-The `nginx` container (that will provide the service name) just forwards
-the TLS traffic to the actual server.
-
-The tailscale container provides the network and the `tailscale` command.
-It shares a volume with the `nginx` container, so it is possible to use
-`tailscale cert` for automatically provision the https cert.
-
-```yaml
-services:
-  - xxx-server    # The service image
-  - ts-xxx        # The tailscale software
-  - xxx           # A nginx proxy
-```
-
-:::
-
-
 [](.coverbg.topic)
 
 ## Advanced services
 
-[](.coverbg.screenshot)
+[](.coverbg)
 
 ### Image generation with [Fooocus](https://github.com/lllyasviel/Fooocus)
 
-![A Fooocus github repo screenshot](images/fooocus.png)
+![A Fooocus github repo screenshot](images/fooocus-2.png)
 
 [](.coverbg)
 
@@ -368,25 +366,7 @@ This NVidia A100 with 80GB costs around $10K. WTF.
 
 [](.coverbg.topic)
 
-## Solution: AWS
-
-[](.coverbg)
-
-### Challenge: connectivity price
-
-![A picture of Scrooge McDuck](images/tio-gilito.png)
-
-::: Notes
-
-Public endpoints require multiple subnets, NATgw, public IPs, ALB... 
-and we haven't even talked about the EC2 instances. It all adds up.
-AWS's first source of income are NATgw, probably.
-
-:::
-
-[](.coverbg)
-
-### Challenge: connectivity complexity
+### Connectivity complexity
 
 ![A guy holding many wires](images/wires-wires.png)
 
@@ -416,7 +396,7 @@ Architecture. It was supposed to be fun! **I already have a job**.
 ::: Notes
 
 
-[](#mesh,.illustration)
+[](#mesh,.illustration.partial)
 
 ### Product technology
 
