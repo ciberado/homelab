@@ -1,6 +1,6 @@
 [](#title,.coverbg)
 
-# HomeLab with Tailscale, Docker and AWS
+# Build your homelab
 
 ![HomeLab](images/homelab.jpg)
 
@@ -22,12 +22,6 @@ email at javier-moreno dt com
 
 [](.coverbg)
 
-### Principal Cloud Consultant
-
-![NTT Data logo](images/ntt-logo.png)
-
-[](.coverbg)
-
 ### Postgraduate Course co-Director
 
 ![UPCSchool cloud course](images/upcschool.png)
@@ -36,6 +30,79 @@ email at javier-moreno dt com
 
 You can find more information about the course at its
 [web]() or by asking me :)
+
+:::
+
+[](.coverbg)
+
+### Principal Cloud Consultant
+
+![NTT Data logo](images/ntt-logo.png)
+
+
+[](.coverbg)
+
+### In the cloud from 2012
+
+![An old datacenter](images/picard-at-datacenter.png)
+
+[](.coverbg)
+
+### 12 years of love
+
+![An idealized view of a datacenter](images/cute-cloud.png)
+
+::: Notes
+
+* Explain what the cloud is.
+* How incredible has been as way of democratizing technology.
+* Technooptimism.
+* What services you used: AWS, gmail, twitter
+* DID I SAY TWITTER?
+
+:::
+
+[](.coverbg)
+
+### Elon Musk
+
+![Bad Elon Musk](images/elon.png)
+
+::: Notes
+
+* Centralized power
+* Walled garden
+* Prize increasement
+* Manipulation
+* Massive risk
+
+:::
+
+[](.coverbg)
+
+### The world in 12 years?
+
+![A cyberpunk datacenter](images/cyberdatacenter.png)
+
+::: Notes
+
+* The future is looking more and more like a dystopia.
+* High tech, low live.
+
+:::
+
+[](.coverbg)
+
+### Wake up samurai
+
+![A picture of Johnny Silverhand](images/jhonnysilverhand.jpg)
+
+::: Notes
+
+We are techies. 
+We know our staff. 
+We want to learn. 
+So let's get it back.
 
 :::
 
@@ -93,6 +160,77 @@ with a GTX 1060 with 3GB VRAM and 16GB RAM.
 
 [](.coverbg.topic)
 
+## The basic stack
+
+[](.coverbg)
+
+### Windows 10
+
+![A screenshot of Vampire Survivors](images/vampire.png)
+
+
+[](.coverbg)
+
+### Docker
+
+![A box full of kawais](images/kawai-docker.png)
+
+::: Notes
+
+* Explain the problems of sharing an OS
+* Present docker as a solution.
+
+:::
+
+[](.coverbg)
+
+### WSL
+
+![Kawaiis in a yellow box](images/wsl-kawai.png)
+
+::: Notes
+
+* WSL allows native Linux containers under windows.
+* Windows is blue, WSL is yellow.
+* Ok, a bit cripy maybe.
+
+:::
+
+### Automatic start
+
+
+
+```bash
+
+// Just pres `Win+R`, type `shell:startup`, 
+// and drop it there with the name `wsl-init.vbe`.
+
+Set ws = CreateObject("Wscript.Shell")
+ws.run "wsl -d Ubuntu", vbhide
+```
+
+::: Notes
+
+Tequila doubles as the family console, mostly for playing
+[Vampire Surivors](https://store.steampowered.com/app/1794680/Vampire_Survivors/).
+I'm way too old for investing time in hardware configuration,
+so the machine is running Windows. That makes 
+[WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+the most natural way of starting containers. To make things
+smoother, I've added a simple script for starting it every
+time the computer is bootstrapped.
+
+Just pres `Win+R`, type `shell:startup`, and drop it there
+with the name `wsl-init.vbe`.
+
+```vbe
+Set ws = CreateObject("Wscript.Shell")
+ws.run "wsl -d Ubuntu", vbhide
+```
+
+:::
+
+
 ## Regular services
 
 [](.coverbg.screenshot)
@@ -107,30 +245,72 @@ with a GTX 1060 with 3GB VRAM and 16GB RAM.
 
 ![a screenshot of Home Assistant](images/ha.png)
 
+[](.coverbg)
+
+### Minecraft server
+
+![A picture of minecraft](images/minecraft.webp)
+
 [](.coverbg.screenshot.dark)
 
 ### Media management with [Jellyfin](https://jellyfin.org/)
 
 ![A screenshot of Jellyfin](images/jellyfin.png)
 
-[](.coverbg.screenshot)
+[](.coverbg)
 
-### Quizzes with [Quizi](https://github.com/cosmoart/quiz-game)
+### Demo!
 
-![A screenshot of Quizi](images/quizi.png)
+![A car going through an explosion](images/car-explosion-2.png)
 
 ::: Notes
 
-We use quizzes a lot in the postgraduate course, as it is the
-most effective way of fixing concepts in long-term memory by
-practicing [spaced repetition](https://www.amazon.es/Make-Stick-Science-Successful-Learning/dp/0674729013).
+```
+cd jedai
+cd jelly
 
-Unfortunately, the tool we used for it has changed its
-terms and conditions, so I'm looking for a replacement.
-During the following months, I plan to adapt 
-[my fork](https://github.com/ciberado/quiz-game)
-of the original Quizi to fill this role.
+  # Explain what a registry is
+docker search jellyfin
+
+  # Explain what an image is
+docker pull jellyfin/jellyfin
+
+docker run \
+  --name jellyfin \
+  -p 8096:8096 \
+  --volume $(pwd)/config:/config \
+  --volume $(pwd)/cache:/cache \
+  --mount type=bind,source=$(pwd)/media,target=/media \
+  jellyfin/jellyfin
+```
+
 :::
+
+
+[](.coverbg.screenshot)
+
+### Docker compose
+
+![A diagram explaining the three compose containers](images/compose-diagram.png)
+
+::: Notes
+
+The `nginx` container (that will provide the service name) just forwards
+the TLS traffic to the actual server.
+
+The tailscale container provides the network and the `tailscale` command.
+It shares a volume with the `nginx` container, so it is possible to use
+`tailscale cert` for automatically provision the https cert.
+
+```yaml
+services:
+  - xxx-server    # The service image
+  - ts-xxx        # The tailscale software
+  - xxx           # A nginx proxy
+```
+
+:::
+
 
 [](.coverbg.topic)
 
@@ -334,60 +514,6 @@ sudo tailscale up --hostname=fooocus
 
 [](.coverbg.topic)
 
-## Shared environment
-
-[](.coverbg)
-
-### Docker under WSL
-
-![A screenshot of Vampire Survivors](images/vampire.png)
-
-::: Notes
-
-Tequila doubles as the family console, mostly for playing
-[Vampire Surivors](https://store.steampowered.com/app/1794680/Vampire_Survivors/).
-I'm way too old for investing time in hardware configuration,
-so the machine is running Windows. That makes 
-[WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-the most natural way of starting containers. To make things
-smoother, I've added a simple script for starting it every
-time the computer is bootstrapped.
-
-Just pres `Win+R`, type `shell:startup`, and drop it there
-with the name `wsl-init.vbe`.
-
-```vbe
-Set ws = CreateObject("Wscript.Shell")
-ws.run "wsl -d Ubuntu", vbhide
-```
-
-:::
-
-[](.coverbg.screenshot)
-
-### Docker compose approach
-
-![A diagram explaining the three compose containers](images/compose-diagram.png)
-
-::: Notes
-
-The `nginx` container (that will provide the service name) just forwards
-the TLS traffic to the actual server.
-
-The tailscale container provides the network and the `tailscale` command.
-It shares a volume with the `nginx` container, so it is possible to use
-`tailscale cert` for automatically provision the https cert.
-
-```yaml
-services:
-  - xxx-server    # The service image
-  - ts-xxx        # The tailscale software
-  - xxx           # A nginx proxy
-```
-
-:::
-
-[](.topic)
 
 ## Features
 
