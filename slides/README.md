@@ -1,6 +1,6 @@
 [](#title,.coverbg)
 
-# Build your homelab
+# Build your very own homelab
 
 ![HomeLab](images/homelab.jpg)
 
@@ -234,7 +234,7 @@ ws.run "wsl -d Ubuntu", vbhide
 
 ### Docker under WSL under Windows
 
-![Kawaii Neo](images/kawai-neo.jpg)
+![Kawaii Neo](images/kawai-neo.png)
 
 
 ::: Notes
@@ -421,7 +421,7 @@ Architecture. It was supposed to be fun! **I already have a job**.
 
 ### [Account creation](https://tailscale.com/)
 
-![Tailscale login page](images/login.png)
+TODO
 
 ::: Notes
 
@@ -429,21 +429,30 @@ Use your preferred IdP.
 
 :::
 
-[](.illustration)
+[](.coverbg)
 
-### [Tailnet configuration](https://login.tailscale.com/admin/dns)
+![](images/tailscale/10-account/1.png)
 
-![Three numbers in a row, by Magda Ehlers, https://www.pexels.com/photo/blue-red-and-yellow-stripe-surface-1329297/](images/one-two-three.png)
+[](.coverbg)
 
-* Rename the tailnet
-* Activate MagicDNS
-* Activate automatic HTTPs certificates
+![](images/tailscale/10-account/2.png)
 
-::: Notes
+[](.coverbg)
 
-One user will be associated to one tailnet, but devices can be shared between tailnets.
+![](images/tailscale/10-account/3.png)
 
-:::
+[](.coverbg)
+
+![](images/tailscale/10-account/4.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/5.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/6.png)
+
 
 [](.coverbg.screenshot)
 
@@ -461,7 +470,27 @@ Windows, Linux, MacOS, Android, Chromebooks, Google TV, iOS, Apple TV.
 
 [](.coverbg)
 
-### Device configuration
+### Demo!
+
+![](images/car-explosion.jpg)
+
+::: Notes
+
+* On Android or Windows it is straightforward
+* Demo on Linux
+* Show the admin panel on the machine tab once it's done
+* Ping from android
+
+```bash
+sudo su ubuntu
+cd 
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up --hostname=demoserver
+```
+
+:::
+
+[](.coverbg)
 
 ![Magic meme](images/magic.png)
 
@@ -470,6 +499,76 @@ Windows, Linux, MacOS, Android, Chromebooks, Google TV, iOS, Apple TV.
 Many times, there is no node configuration, apart from providing authorization.
 
 :::
+
+
+[](.coverbg)
+
+![](images/tailscale/10-account/7.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/8.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/9.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/10.png)
+
+[](.coverbg)
+
+![](images/tailscale/10-account/11.png)
+
+
+[](.coverbg)
+
+### [Tailnet configuration](https://login.tailscale.com/admin/dns)
+
+![Blue, Red, and Yellow Stripe Surface, by Magda Ehlers, https://www.pexels.com/photo/blue-red-and-yellow-stripe-surface-1329297/](https://images.pexels.com/photos/1329297/pexels-photo-1329297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+::: Notes
+
+One user will be associated to one tailnet, but devices can be shared between tailnets.
+
+:::
+
+[](.coverbg)
+
+![](images/tailscale/20-config/12.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/13.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/14.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/15.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/16.png)
+
+![A  burbot, by Anastasija Ovsepjana, https://nattour.ludzasnovads.lv/en/blog/post/burbot-lota-lota](images/tailscale/20-config/burbot.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/17.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/18.png)
+
+[](.coverbg)
+
+![](images/tailscale/20-config/19.png)
+
+
 
 [](.coverbg)
 
