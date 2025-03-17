@@ -88,6 +88,7 @@ You can find more information about the course at its
 
 * The future is looking more and more like a dystopia.
 * High tech, low live.
+* Subscription model is extractive.
 
 :::
 
@@ -202,7 +203,7 @@ with a GTX 1060 with 3GB VRAM and 16GB RAM.
 
 ```bash
 
-// Just pres `Win+R`, type `shell:startup`, 
+// Just press `Win+R`, type `shell:startup`, 
 // and drop it there with the name `wsl-init.vbe`.
 
 Set ws = CreateObject("Wscript.Shell")
@@ -251,6 +252,16 @@ ws.run "wsl -d Ubuntu", vbhide
 ::: Notes
 
 * I can play.
+
+:::
+
+[](.coverbg)
+
+![Lamine Yamal](https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_215,w_3728,h_2097/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F12up_es_international_web%2F01jk5rmjfgfhj4mcw0p1.jpg)
+
+::: Notes
+
+* Lamine Yamal
 
 :::
 
@@ -417,11 +428,11 @@ Architecture. It was supposed to be fun! **I already have a job**.
 
 :::
 
-[](.coverbg.screenshot)
+[](.coverbg)
 
-### [Account creation](https://tailscale.com/)
+### [Let's go!](https://tailscale.com/)
 
-TODO
+![A cat running a race](images/runner-cat.png)
 
 ::: Notes
 
@@ -485,7 +496,7 @@ Windows, Linux, MacOS, Android, Chromebooks, Google TV, iOS, Apple TV.
 sudo su ubuntu
 cd 
 curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up --hostname=demoserver
+sudo tailscale up --hostname=jelly
 ```
 
 :::
@@ -526,7 +537,7 @@ Many times, there is no node configuration, apart from providing authorization.
 
 ### [Tailnet configuration](https://login.tailscale.com/admin/dns)
 
-![Blue, Red, and Yellow Stripe Surface, by Magda Ehlers, https://www.pexels.com/photo/blue-red-and-yellow-stripe-surface-1329297/](https://images.pexels.com/photos/1329297/pexels-photo-1329297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![A cat messing with wires](images/wires-cat.png)
 
 ::: Notes
 
@@ -568,8 +579,6 @@ One user will be associated to one tailnet, but devices can be shared between ta
 
 ![](images/tailscale/20-config/19.png)
 
-
-
 [](.coverbg)
 
 ### Demo!
@@ -609,18 +618,16 @@ tailnet.
 
 :::
 
-[](#quiz,.illustration)
+[](.coverbg)
 
-### Public devices
+### Automatic TLS (https://)
 
-[https://quiz.snow-burbot.ts.net](https://quiz.snow-burbot.ts.net)
+[](.coverbg)
 
+### Public access
 
-![Quizi screenshot](images/quiz.png)
 
 ::: Notes
-
-
 
 It is possible to use `tailnetd` as an HTTPs proxy, both internally and publicly.
 That feature can be activate with the `serve` and `funnel` commands, or configured
@@ -660,6 +667,8 @@ and all the commands will be recorded for audit.
 
 :::
 
+### Extending to the cloud
+
 [](.coverbg)
 
 ### Subnet propagation
@@ -676,6 +685,32 @@ and that's all.
 :::
 
 [](.topic)
+
+## Complex deployments
+
+### Funnel / Serve configuration
+
+### Docker compose
+
+### Compose example
+
+## Other services for your homelab
+
+### VSCode
+
+### Vosk
+
+### Telegram bots
+
+### Calendar
+
+### Email client
+
+### RSS feeds and converters
+
+### Music server
+
+### Planner
 
 ## Gotchas
 
