@@ -1,10 +1,6 @@
-sudo su ubuntu
-cd 
-curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up
+### Install Docker
 
-------------------
-
+```
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
@@ -26,163 +22,79 @@ sudo usermod -aG docker $USER
 sudo su ubuntu # Reload creds
 
 docker ps # Success
+```
 
---------------------
+### Run jellyfin
 
-docker run --name pokemon -d -p 80:80 ciberado/pokemon-nodejs:1.0.3
+```bash
+cd jedai/jelly
 
-tailscale ip -4
+docker search jellyfin
 
-IP=$(tailscale ip -4)
-echo Open http://$IP
+docker pull jellyfin/jellyfin
 
---------------------------
+docker run \
+ --name jellyfin \
+ -p 8096:8096 \
+ -v $(pwd)/config:/config \
+ -v $(pwd)/cache:/cache \
+ --mount type=bind,source=$(pwd)/media,target=/media \
+ jellyfin/jellyfin
+```
 
-Set the new tag in the acl:
+Open http://localhost:8096.
 
-{
-	...
-	
-	"tagOwners": {
-		"tag:container": ["homelab@aprender.cloud"]
-	},
-	
-	...
-}
+### Fooocus on tailscale
 
+```bash
+curl localhost:7865
+```
 
-# In ubuntu
-apt update && apt install curl -y
+```bash
+sudo su ubuntu
+cd 
 curl -fsSL https://tailscale.com/install.sh | sh
-tailscale up
+sudo tailscale up
+```
 
-sudo docker run -d --name=tailscaled --restart=always \
-	-v /var/lib/tailscale1:/var/lib/tailscale \
-	-v /var/lib:/var/lib \
-	-v /dev/net/tun:/dev/net/tun \
-	--device /dev/net/tun:/dev/net/tun \
-	-e TS_STATE_DIR=/var/lib/tailscale \
-	-e TS_USERSPACE=0 \
-	-e TS_AUTH_ONCE=1 \
-	-e TS_ACCEPT_DNS=1 \
-	-e TS_HOSTNAME=pokemon \
-	--cap-add=NET_ADMIN \
-	--cap-add=NET_RAW \
-	--env TS_AUTHKEY=tskey-auth-ktDd6atBBB21CNTRL-pQ7pyHFJvNSV9kQt53WZNSDLxnnwgA9WJ \
-	tailscale/tailscale:stable
+### Tailscale in a container
 
-# check the admin page
-# see the new node
+```bash
+KEY=...
+HOST=jellyfin
 
-# Inside the container
+sudo docker run -d \
+ --name=$HOST \
+ -v $(pwd)/config:/config \
+ -v $(pwd)/cache:/cache \
+ --mount type=bind,source=$(pwd)/media,target=/media \
+ -v /var/lib/tailscale$HOST:/var/lib/tailscale \
+ -v /dev/net/tun:/dev/net/tun \
+ --device /dev/net/tun:/dev/net/tun \
+ -e TS_STATE_DIR=/var/lib/tailscale \
+ -e TS_USERSPACE=0 \
+ -e TS_AUTH_ONCE=1 \
+ -e TS_ACCEPT_DNS=1 \
+ -e TS_HOSTNAME=$HOST \
+ --cap-add=NET_ADMIN \
+ --cap-add=NET_RAW \
+ --env TS_AUTHKEY=$KEY \
+ jellyfin/jellyfin
 
-mkdir web && cd web
-wget https://pastebin.com/raw/kAQg0yhu -O index.html
-sed -i "s/<h2>.*<\/h2>/<h2>Pikachu from $TS_HOSTNAME<\/h2>/g" index.html
-
-apk add caddy
-caddy file-server &
-
-
-# generate new key
-
-sudo docker run -d --name=pokemon2 --restart=always \
-	-v /var/lib/tailscale2:/var/lib/tailscale \
-	-v /var/lib:/var/lib \
-	-v /dev/net/tun:/dev/net/tun \
-	--device /dev/net/tun:/dev/net/tun \
-	-e TS_STATE_DIR=/var/lib/tailscale \
-	-e TS_USERSPACE=0 \
-	-e TS_AUTH_ONCE=1 \
-	-e TS_ACCEPT_DNS=1 \
-	-e TS_HOSTNAME=pokemon2 \
-	--cap-add=NET_ADMIN \
-	--cap-add=NET_RAW \
-	--env TS_AUTHKEY=tskey-auth-kn4qiEkJGD21CNTRL-dMTNQjwHDUja9MxwtR5yTjCZSzkykKpf \
-	tailscale/tailscale:stable
-
-docker exec -it pokemon2 sh
-
-# check the admin page
-# see the new node
-
-# Inside the container
-
-mkdir web && cd web
-wget https://pastebin.com/raw/kAQg0yhu -O index.html
-sed -i "s/<h2>.*<\/h2>/<h2>Pikachu from $TS_HOSTNAME<\/h2>/g" index.html
-
-apk add caddy
-caddy file-server &
-
-
-# generate new key
-
-
-sudo docker run -d --name=pokemon4 --restart=always \
-	-v /var/lib/tailscale4:/var/lib/tailscale \
-	-v /var/lib:/var/lib \
-	-v /dev/net/tun:/dev/net/tun \
-	--device /dev/net/tun:/dev/net/tun \
-	-e TS_STATE_DIR=/var/lib/tailscale \
-	-e TS_USERSPACE=0 \
-	-e TS_AUTH_ONCE=1 \
-	-e TS_ACCEPT_DNS=1 \
-	-e TS_HOSTNAME=pokemon4 \
-	--cap-add=NET_ADMIN \
-	--cap-add=NET_RAW \
-	--env TS_AUTHKEY=tskey-auth-kqpKQs7Q4c11CNTRL-kuYCCXzCyJZ1ebzvujogJZmPA6b2ia4y \
-	ciberado/pokemon-nodejs:1.0.3
-	
-docker exec -it pokemon4 sh
-
-muévelo a node:ubuntu 
-
-# in pokemon 3
-
-wget -qO- localhost
-
-wget -qO- https://tailscale.com/install.sh | sh
-
-tailscaled > /tailscaled.log 2>&1 &
-
-
-tailscale up --authkey=$TS_AUTHKEY --hostname=$TS_HOSTNAME
-
-
-
----------------------------------
-
-NUMBER=5
-sudo docker run -d --name=pokemon$NUMBER --restart=always \
-	-v /var/lib/tailscale$NUMBER:/var/lib/tailscale \
-	-v /dev/net/tun:/dev/net/tun \
-	--device /dev/net/tun:/dev/net/tun \
-	-e TS_STATE_DIR=/var/lib/tailscale \
-	-e TS_USERSPACE=0 \
-	-e TS_AUTH_ONCE=1 \
-	-e TS_ACCEPT_DNS=1 \
-	-e TS_HOSTNAME=pokemon$NUMBER \
-	--cap-add=NET_ADMIN \
-	--cap-add=NET_RAW \
-	--env TS_AUTHKEY=tskey-auth-kiYNNGbngD11CNTRL-rUF2P6gEk2XZE1ERUyPP2XZABmHiTwt5H \
-	node:slim bash -c "sleep 100000"
+docker logs jellyfin
 
 docker exec -it pokemon$NUMBER bash 
+```
 
 # in container
 
 apt update && apt install curl git -y
 
 curl -fsSL https://tailscale.com/install.sh | sh
+
 tailscaled > /tailscaled.log 2>&1 &
+
 tailscale up --authkey=$TS_AUTHKEY --hostname=$TS_HOSTNAME
-
-
-git clone https://github.com/ciberado/pokemon-nodejs
-cd pokemon-nodejs
-npm i 
-npm run start &
 
 ## Private https access
 
@@ -223,5 +135,5 @@ tailscale up --hostname=$TS_HOSTNAME --ssh
 
 # From your laptop, in the network
 
-ssh root@pokemon5
+ssh root@jellyfin
 
