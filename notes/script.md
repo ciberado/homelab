@@ -59,6 +59,12 @@ sudo tailscale up
 
 ### Tailscale in a container
 
+```json
+	"tagOwners": {
+		"tag:container": ["homelab@aprender.cloud"],
+	},
+```
+
 ```bash
 KEY=...
 HOST=jellyfin
